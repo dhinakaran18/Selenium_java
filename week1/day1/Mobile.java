@@ -17,22 +17,22 @@ public class Mobile
 	{
 		Mobile m = new Mobile();
 		
-		String brandname = m.mobileBrandName;
-		char logo = m.mobileLogo;
-		short piece = m.noOfMobilePiece;
-		int number = m.modelNumber;
-		long imei = m.mobileImeiNumber;
-		long imei1 = m.mobileImeiNumber1;
-		float price = m.mobilePrice; 
-		boolean isDamaged = m.isDamaged;
+//		String brandname = m.mobileBrandName;
+//		char logo = m.mobileLogo;
+//		short piece = m.noOfMobilePiece;
+//		int number = m.modelNumber;
+//		long imei = m.mobileImeiNumber;
+//		long imei1 = m.mobileImeiNumber1;
+//		float price = m.mobilePrice; 
+//		boolean isDamaged = m.isDamaged;
 		
-		System.out.println("The Mobile Brand is "+brandname );
-		System.out.println("The Logo is "+logo);
-		System.out.println("The No of Mobile pieces in stock is "+piece);
-		System.out.println("Mobile Model Number is "+number);
-		System.out.println("Mobile IMEI Number is '"+imei+"' & '"+imei1+"'");
-		System.out.println("The Mobile Prize is "+price);
-		System.out.println("Is that Mobile damaged? "+isDamaged);
+		System.out.println("The Mobile Brand is "+m.mobileBrandName );
+		System.out.println("The Logo is "+m.mobileLogo);
+		System.out.println("The No of Mobile pieces in stock is "+m.noOfMobilePiece);
+		System.out.println("Mobile Model Number is "+m.modelNumber);
+		System.out.println("Mobile IMEI Number is '"+m.mobileImeiNumber+"' & '"+m.mobileImeiNumber1+"'");
+		System.out.println("The Mobile Prize is "+m.mobilePrice);
+		System.out.println("Is that Mobile damaged? "+m.isDamaged);
 	}
 
 }
