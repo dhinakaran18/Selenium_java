@@ -30,7 +30,7 @@ public class Create {
 
 		WebElement stateFieldElement = driver.findElement(By.id("createLeadForm_generalStateProvinceGeoId"));
 		Select sel = new Select(stateFieldElement);
-		sel.selectByValue("AA");
+		sel.selectByValue("NY");
 		
 		driver.findElement(By.className("smallSubmit")).click();
 		String str = driver.getTitle();

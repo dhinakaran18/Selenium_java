@@ -7,9 +7,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Edit {
+public class Duplicate {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("http://leaftaps.com/opentaps/control/main");
@@ -38,10 +38,12 @@ public class Edit {
 		sel.selectByValue("NY");
 		driver.findElement(By.className("smallSubmit")).click();
 
-//Edit Module
-		driver.findElement(By.linkText("Edit")).click();
-		  driver.findElement(By.name("description")).clear();
-		driver.findElement(By.id("updateLeadForm_importantNote")).sendKeys("Tested");
+//Duplicate Module		
+		driver.findElement(By.linkText("Duplicate Lead")).click();
+		driver.findElement(By.id("createLeadForm_companyName")).clear();
+		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("Microsoft");
+		driver.findElement(By.id("createLeadForm_firstName")).clear();
+		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Kathiravan");
 		driver.findElement(By.className("smallSubmit")).click();
 
 //Get Title
