@@ -7,18 +7,22 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Create {
+public class Duplicate {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver = new ChromeDriver();
 		driver.get("http://leaftaps.com/opentaps/control/main");
 		driver.manage().window().maximize();
+
+//Login
 		driver.findElement(By.id("username")).sendKeys("Demosalesmanager");
 		driver.findElement(By.id("password")).sendKeys("crmsfa");
 		driver.findElement(By.className("decorativeSubmit")).click();
 		driver.findElement(By.linkText("CRM/SFA")).click();
 		driver.findElement(By.linkText("Leads")).click();
+
+//Create Module
 		driver.findElement(By.linkText("Create Lead")).click();
 		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("Google");
 		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Dhinakaran");
@@ -28,13 +32,24 @@ public class Create {
 		driver.findElement(By.id("createLeadForm_description")).sendKeys("Automation Testing");
 		driver.findElement(By.id("createLeadForm_primaryEmail")).sendKeys("dhinakaran@gmail.com");
 
+//Drop-Down
 		WebElement stateFieldElement = driver.findElement(By.id("createLeadForm_generalStateProvinceGeoId"));
 		Select sel = new Select(stateFieldElement);
 		sel.selectByValue("NY");
-		
 		driver.findElement(By.className("smallSubmit")).click();
+
+//Duplicate Module		
+		driver.findElement(By.linkText("Duplicate Lead")).click();
+		driver.findElement(By.id("createLeadForm_companyName")).clear();
+		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("Microsoft");
+		driver.findElement(By.id("createLeadForm_firstName")).clear();
+		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Kathiravan");
+		driver.findElement(By.className("smallSubmit")).click();
+
+//Get Title
 		String str = driver.getTitle();
 		System.out.println("The title is :" + str);
-		driver.close();
+
 	}
+
 }
